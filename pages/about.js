@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Link from "next/link";
+import styles from "../styles/about.module.scss";
+import MainContainer from "../components/MainContainer";
 
 const About = () => {
     const [items, setItems] = useState([
@@ -22,21 +24,24 @@ const About = () => {
     ]);
 
     return (
-        <div>
-            <h1>О нас</h1>
-            <ul>
-                {items.map(item =>
-                    <li key={item.id}>
-                        <Link href={`/about/${item.id}`}>
-                            <div>{item.title}</div>
-                        </Link>
-                        <div>{item.date}</div>
-                        <div>{item.description}</div>
-                    </li>
-                )}
-            </ul>
+        <MainContainer title="О компании">
+            <div className={styles.about}>
+                <h1>О нас</h1>
+                <ul>
+                    {items.map(item =>
+                        <li key={item.id}>
+                            <Link href={`/about/${item.id}`}>
+                                <div>{item.title}</div>
+                            </Link>
+                            <div>{item.date}</div>
+                            <div>{item.description}</div>
+                        </li>
+                    )}
+                </ul>
 
-        </div>
+            </div>
+        </MainContainer>
+
     );
 };
 
