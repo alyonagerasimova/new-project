@@ -1,3 +1,9 @@
+.mainPage{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -10,4 +16,13 @@
     font-family: 'Montserrat',sans-serif;
     font-size: 18px;
     margin: 10px;
+}
+
+.main{
+
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
 }

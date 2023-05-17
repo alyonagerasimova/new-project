@@ -1,15 +1,16 @@
 import MainContainer from "../../components/MainContainer";
 import {AboutTextService} from "../../services/about-text.service";
+import data from "../../db.json";
+import {useRouter} from "next/router";
 
-
-export default function ({text}) {
-    // const {query} = useRouter();
-    // console.log(text)
+export default function () {
+    const {query} = useRouter();
 
     return (
         <MainContainer title="О компании">
             <div>
-                {text.description}
+                {/*{text.description}*/}
+                {data.aboutText[query.id - 1].description}
             </div>
         </MainContainer>
 
