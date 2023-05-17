@@ -1,17 +1,40 @@
-import {useRouter} from "next/router";
 import MainContainer from "../../components/MainContainer";
-import {useState} from "react";
+import {AboutTextService} from "../../services/about-text.service";
 
-export default function () {
-    const {query} = useRouter();
-    console.log(query)
+
+export default function ({text}) {
+    // const {query} = useRouter();
+    // console.log(text)
 
     return (
         <MainContainer title="О компании">
             <div>
-                About {query.id}
+                {text.description}
             </div>
         </MainContainer>
 
     )
+}
+
+export async function getStaticPaths() {
+    const items = await AboutTextService.getAll();
+
+    return {
+        paths: items.map(item => ({
+            params: {
+                id: item.id.toString()
+            },
+        })),
+        fallback: 'blocking',
+    };
+}
+
+export async function getStaticProps(params) {
+    const text = await AboutTextService.getById(params.id);
+
+    return {
+        props: {
+            text
+        },
+    }
 }
