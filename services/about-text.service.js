@@ -1,7 +1,7 @@
 import axios from "axios";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
-const API_URL = "http://localhost:4200";
-axios.defaults.baseURL = API_URL;
+axios.defaults.baseURL = process.env.API_URL;
 
 export const AboutTextService = {
     async getAll() {
