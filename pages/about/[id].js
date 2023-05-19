@@ -3,14 +3,15 @@ import {AboutTextService} from "../../services/about-text.service";
 import data from "../../db.json";
 import {useRouter} from "next/router";
 
-export default function () {
+export default function ({text}) {
     const {query} = useRouter();
+    console.log(query.id)
 
     return (
         <MainContainer title="О компании">
             <div>
-                {/*{text.description}*/}
                 {data.aboutText[query.id - 1].description}
+                {/*{text.description}*/}
             </div>
         </MainContainer>
 
@@ -18,7 +19,8 @@ export default function () {
 }
 
 export async function getStaticPaths() {
-    const items = await AboutTextService.getAll();
+    // const items = await AboutTextService.getAll();
+    const items = data.aboutText;
 
     return {
         paths: items.map(item => ({
@@ -31,7 +33,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(params) {
-    const text = await AboutTextService.getById(params.id);
+    // const text = await AboutTextService.getById(params.id);
+    const text = data.aboutText.filter(it => it.id === params.id);
 
     return {
         props: {

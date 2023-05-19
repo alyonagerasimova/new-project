@@ -24,9 +24,8 @@ const About = () => {
     ]);
 
     return (
-        <MainContainer title="О компании">
+        <MainContainer title="О нас">
             <div className={styles.about}>
-                <h1>О нас</h1>
                 <ul>
                     {items.map(item =>
                         <li key={item.id}>

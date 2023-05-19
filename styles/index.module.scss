@@ -1,0 +1,56 @@
+.main-page {
+
+}
+
+.link_block {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.info_block{
+  display: flex;
+  align-items: center;
+  .phones{
+    margin-right: 42px;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(49, 60, 72, 0.05);
+  margin-bottom: 20px;
+  padding: 10px;
+  min-width: 815px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.content {
+  padding: 20px;
+
+  h2 {
+    margin: 5px 0;
+    color: #363636;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+}
+
+.main {
+  padding: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
