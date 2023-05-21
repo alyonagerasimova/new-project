@@ -8,33 +8,38 @@ const MainContainer = ({children, keywords, title}) => {
     return (
         <>
             <Head>
-                <meta keywords={keywords}/>
+                <meta lang={'ru'} keywords={keywords}/>
                 <title>{title}</title>
             </Head>
 
-            <div className={styles.navbar}>
-
-                <div className={styles.link_block}>
+            <header className={styles.navbar}>
+                <nav className={styles.link_block}>
                     <Link className={styles.link} href="/">
                         <Image src="/img.png" alt="logo" width={74} height={61}/>
                     </Link>
                     <Link className={styles.link} href="/">Главная</Link>
                     <Link className={styles.link} href="/about">О нас</Link>
                     <Link className={styles.link} href="/certificate">Достижения</Link>
-                </div>
+                </nav>
 
                 <div className={styles.info_block}>
                     <div className={styles.phones}>
                         <div>8 960 819 -97-55</div>
                         <div> 8 (846) 205-50-35</div>
                     </div>
-                    <div>г. Самара, ул. Губанова, 3 </div>
+                    <div>г. Самара, ул. Губанова, 3</div>
                 </div>
-            </div>
-            <div>
+            </header>
+
+            <main className={styles.main}>
                 <h1 style={{color: "blue", textAlign: "center", marginBottom: "10px"}}>{title}</h1>
-                {children}
-            </div>
+                <div className={styles.main__content}>
+                    {children}
+                </div>
+            </main>
+            <footer className={styles.footer}>
+                footer
+            </footer>
         </>
     );
 };

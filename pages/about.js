@@ -25,7 +25,7 @@ const About = () => {
 
     return (
         <MainContainer title="О нас">
-            <div className={styles.about}>
+            <section className={styles.about}>
                 <ul>
                     {items.map(item =>
                         <li key={item.id}>
@@ -38,7 +38,7 @@ const About = () => {
                     )}
                 </ul>
 
-            </div>
+            </section>
         </MainContainer>
 
     );

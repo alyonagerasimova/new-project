@@ -6,7 +6,7 @@ import data from "../db.json";
 const Index = () => {
     return (
         <div className={styles.mainPage}>
-            <MainContainer title="Главная страница">
+            <MainContainer title="Главная страница" keywords={'abc test'}>
                 <div className={styles.content}>
                     <h2>АН ООО “Лучший Дом” предлагает услуги: </h2>
                     <ul>
@@ -24,7 +24,7 @@ const Index = () => {
                     {data.aboutText[0].description}
                 </div>
 
-                <footer className={styles.footer}>
+                <section>
                     <div style={{position: "relative", overflow: "hidden"}}>
                         <a
                             href="https://yandex.ru/maps/51/samara/?utm_medium=mapframe&utm_source=maps"
@@ -41,8 +41,7 @@ const Index = () => {
                             width="860" height="400" frameBorder="1" allowFullScreen={true}
                             style={{position: "relative"}}></iframe>
                     </div>
-                </footer>
-
+                </section>
             </MainContainer>
         </div>
     );
