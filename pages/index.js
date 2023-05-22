@@ -6,7 +6,8 @@ import data from "../db.json";
 const Index = () => {
     return (
         <div className={styles.mainPage}>
-            <MainContainer title="Главная страница" keywords={'abc test'}>
+            <h1 style={{color: "blue", textAlign: "center", marginBottom: "10px"}}>Главная страница</h1>
+            {/*<MainContainer title="Главная страница" keywords={'abc test'}>*/}
                 <div className={styles.content}>
                     <h2>АН ООО “Лучший Дом” предлагает услуги: </h2>
                     <ul>
@@ -20,7 +21,7 @@ const Index = () => {
                     </ul>
                 </div>
 
-                <div className={styles.main}>
+                <div>
                     {data.aboutText[0].description}
                 </div>
 
@@ -42,9 +43,11 @@ const Index = () => {
                             style={{position: "relative"}}></iframe>
                     </div>
                 </section>
-            </MainContainer>
+            {/*</MainContainer>*/}
         </div>
     );
 };
 
 export default Index;
+
+Index.getLayout

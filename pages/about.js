@@ -24,7 +24,9 @@ const About = () => {
     ]);
 
     return (
-        <MainContainer title="О нас">
+        // <MainContainer title="О нас">
+        <>
+            <h1 style={{color: "blue", textAlign: "center", marginBottom: "10px"}}>О нас</h1>
             <section className={styles.about}>
                 <ul>
                     {items.map(item =>
@@ -37,10 +39,9 @@ const About = () => {
                         </li>
                     )}
                 </ul>
-
             </section>
-        </MainContainer>
-
+        </>
+        // </MainContainer>
     );
 };
 
