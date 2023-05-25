@@ -42,7 +42,7 @@ const Certificate = () => {
     return (
         // <MainContainer title="Сертификаты">
         <>
-            <h1 style={{color: "blue", textAlign: "center", marginBottom: "10px"}}>Сертификаты</h1>
+            <h1 id="certificate" style={{color: "blue", textAlign: "center", marginBottom: "10px"}}>Сертификаты</h1>
             <div className={styles.slideshow_container}>
 
                 <div className={styles.fade}>

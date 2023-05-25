@@ -26,7 +26,7 @@ const About = () => {
     return (
         // <MainContainer title="О нас">
         <>
-            <h1 style={{color: "blue", textAlign: "center", marginBottom: "10px"}}>О нас</h1>
+            <h1 id="about" style={{color: "blue", textAlign: "center", marginBottom: "10px"}}>О нас</h1>
             <section className={styles.about}>
                 <ul>
                     {items.map(item =>

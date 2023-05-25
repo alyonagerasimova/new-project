@@ -5,33 +5,53 @@
 .link_block {
   display: flex;
   align-items: center;
-  gap: 42px;
+  //gap: 42px;
 }
 
-.info_block{
+.info_block {
   display: flex;
   align-items: center;
-  .phones{
+
+  .phones {
     margin-right: 42px;
   }
 }
 
 .navbar {
   // TODO: медиазапросы на размер окна
-
+  background-color: #3F0B81;
+  color: white;
+  position: fixed;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  width: 100%;
   box-shadow: 0 4px 15px rgba(49, 60, 72, 0.05);
   margin-bottom: 20px;
-  padding: 0 150px ;
+  padding: 0 150px;
   min-width: 815px;
 }
 
 .link {
   text-decoration: none;
   font-size: 18px;
+  outline: none;
+  color: white;
+  padding: 10px 20px;
+
+  &:focus {
+    color: #FFAF50;
+  }
+
+  &:hover {
+    color: #FFCB8B;
+  }
+
+  &:active {
+    color: #FFAF50;
+  }
 }
 
 .content {
@@ -48,7 +68,7 @@
 }
 
 .main {
-  margin: 0 150px;
+  margin: 80px 150px 0;
 
   &__content {
     padding: 10px 20px;
