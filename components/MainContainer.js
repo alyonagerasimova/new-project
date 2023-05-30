@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from "../styles/index.module.scss";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 
 const MainContainer = ({children, keywords, title}) => {
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+    });
+
+    function handleScroll(){
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+    }
+
     return (
         <>
             <Head>
@@ -17,19 +29,25 @@ const MainContainer = ({children, keywords, title}) => {
                     <Link className={styles.link} href="#main">
                         <Image src="/img.png" alt="logo" width={74} height={61}/>
                     </Link>
-                    <Link className={styles.link} href="#main">Главная</Link>
+                    <Link className={styles.link} href="#">Главная</Link>
                     <Link className={styles.link} href="#about">О нас</Link>
+                    <Link className={styles.link} href="#">Наши услуги</Link>
                     <Link className={styles.link} href="#certificate">Достижения</Link>
+                    <Link className={styles.link} href="#">Контакты</Link>
+
+                    <div className={styles.info_block}>
+                        <div className={styles.phones}>
+                            <div>8 960 819 -97-55</div>
+                            <div> 8 (846) 205-50-35</div>
+                        </div>
+                        <div>
+                            <Link className={styles.link} href="#map">г. Самара, ул. Губанова, 3</Link>
+                        </div>
+                    </div>
                 </nav>
 
-                <div className={styles.info_block}>
-                    <div className={styles.phones}>
-                        <div>8 960 819 -97-55</div>
-                        <div> 8 (846) 205-50-35</div>
-                    </div>
-                    <div>
-                        <Link className={styles.link} href="#map">г. Самара, ул. Губанова, 3</Link>
-                    </div>
+                <div className={styles.progress_container}>
+                    <div className={styles.progress_bar} id="myBar"></div>
                 </div>
             </header>
 

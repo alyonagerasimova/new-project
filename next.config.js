@@ -5,7 +5,7 @@ const nextConfig = {
         API_URL: "http://localhost:4200",
     },
     images: {
-        domains: ['localhost']
+        domains: ['localhost'],
     }
 };
 
