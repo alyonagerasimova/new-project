@@ -8,7 +8,7 @@ export default function () {
     return (
         // <MainContainer title="О компании">
             <div>
-                {data.aboutText[query.id - 1].description}
+                {/*{data.aboutText[query.id - 1].description}*/}
             </div>
         // </MainContainer>
 
