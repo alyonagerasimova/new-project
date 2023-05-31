@@ -26,14 +26,14 @@ const MainContainer = ({children, keywords, title}) => {
 
             <header className={styles.navbar}>
                 <nav className={styles.link_block}>
-                    <Link className={styles.link} href="#main">
+                    <Link className={styles.link} href="/">
                         <Image src="/img.png" alt="logo" width={74} height={61}/>
                     </Link>
-                    <Link className={styles.link} href="#">Главная</Link>
+                    <Link className={styles.link} href="/">Главная</Link>
                     <Link className={styles.link} href="#about">О нас</Link>
-                    <Link className={styles.link} href="#">Наши услуги</Link>
+                    <Link className={styles.link} href="#services">Наши услуги</Link>
                     <Link className={styles.link} href="#certificate">Достижения</Link>
-                    <Link className={styles.link} href="#">Контакты</Link>
+                    <Link className={styles.link} href="#contacts">Контакты</Link>
 
                     <div className={styles.info_block}>
                         <div className={styles.phones}>
@@ -58,7 +58,18 @@ const MainContainer = ({children, keywords, title}) => {
                 </div>
             </main>
             <footer className={styles.footer}>
-                footer
+                <div className={styles.footer_desc}>
+                    short description
+                </div>
+                <div className={styles.footer_services}>
+                    our services
+                </div>
+                <div className={styles.footer_form}>
+                    form
+                </div>
+                <div className={styles.footer_contact}>
+                    contacts
+                </div>
             </footer>
         </>
     );

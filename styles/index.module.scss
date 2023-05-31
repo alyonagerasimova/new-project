@@ -4,36 +4,54 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   h2 {
+    text-align: center;
     margin: 5px 0;
-    color: #363636;
+    color: $color-text-h2;
   }
 
-  section{
-    .image{
+  .post_header {
+    padding-bottom: 20px;
+
+    .image {
       position: relative;
       width: 100%;
 
-      img{
+      .img {
         object-fit: cover;
+        opacity: 0.88;
       }
-      h1 {
-        padding	: 0 5px;
+
+      div {
+        padding: 0 5px;
         position: absolute;
         top: 250px;
         text-align: center;
         width: 100%;
-        color: #af814c;
-      }
-      h2 {
-        padding	: 0 5px;
-        position: absolute;
-        top: 280px;
-        text-align: center;
-        width: 100%;
-        color: #e8a765;
+
+        h1 {
+          color: #000000;
+          text-shadow: 0 1px 6px rgb(69 77 88 / 68%);
+          font-size: 30px;
+        }
+
+        h2 {
+          color: #140048;
+          font-size: 28px;
+        }
       }
     }
+  }
+}
+
+.section{
+  margin-bottom: 16px;
+
+  &_map{
+    background-color: #e3e3e3;
+    padding: 10px;
+    border-radius: 5px;
   }
 }
 
@@ -43,6 +61,7 @@
   padding: 0 150px;
   justify-content: center;
   //gap: 42px;
+  max-height: 86px;
 }
 
 .info_block {
@@ -103,10 +122,6 @@
   }
 }
 
-.section {
-  margin-bottom: 88px;
-}
-
 .first_section {
   padding: 20px;
   text-align: center;
@@ -144,7 +159,7 @@
   }
 }
 
-.second_section{
+.second_section {
   padding: 20px;
   text-align: center;
 
@@ -153,6 +168,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     li {
       list-style: none;
       max-width: 280px;
@@ -164,12 +180,13 @@
         font-weight: bold;
       }
 
-      img{
+      img {
         border-radius: 50%;
       }
     }
   }
 }
+
 .main {
   margin: 80px 150px 0;
 
@@ -178,7 +195,45 @@
   }
 }
 
+.achievements {
+  display: flex;
+  height: 500px;
+  text-align: center;
+  width: 100%;
+
+  div {
+    padding: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+  }
+
+  &__sellers {
+    background-color: rgba(63, 11, 129, 0.7);
+  }
+
+  &__buyers {
+    background-color: rgba(255, 203, 139, 0.7);
+  }
+}
+
 .footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  background-color: rgba(17, 17, 17, 0.45);
+  height: 100px;
+  width: 100%;
+  color: white;
+  &_desc{
+
+  }
+  &_services{
+
+  }
+  &_form{
+
+  }
+  &_contact{
+
+  }
 }
