@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/alyonagerasimova/new-project#readme",
   "dependencies": {
+    "@ant-design/icons": "^5.1.4",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
+    "antd": "^5.5.2",
     "axios": "^1.4.0",
     "json-server": "^0.17.3",
     "next": "^13.4.2",

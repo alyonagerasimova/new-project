@@ -1,9 +1,14 @@
+import React from 'react';
 import styles from "../styles/index.module.scss";
 import Certificate from "./certificate";
 import Image from "next/image";
 import Partition from "../components/Partition";
 import Contact from "../components/Contact";
 import TeamSection from "../components/TeamSection";
+import { LoadingOutlined } from '@ant-design/icons';
+import { Spin } from 'antd';
+
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 const Index = () => {
     return (
@@ -12,8 +17,14 @@ const Index = () => {
             {/*<MainContainer title="Главная страница" keywords={'abc test'}>*/}
             <section className={styles.post_header}>
                 <div className={styles.image}>
-                    <Image className={styles.img} src="/high-view-toy-model-house-keys.jpg" alt="img" width={1920}
-                           height={640}/>
+                    <Image className={styles.img}
+                           src="/high-view-toy-model-house-keys.jpg"
+                           alt="img"
+                           fill={true}
+                           placeholder={"blur"}
+                           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcwvC/HgAFVwI0U4SedgAAAABJRU5ErkJggg=="
+                           onLoad={(e) => <Spin indicator={antIcon} />}
+                    />
                     <div>
                         <Image src="/img.png" alt="logo" width={74} height={61}/>
                         <h1>АН ООО “Лучший Дом” </h1>
@@ -24,8 +35,8 @@ const Index = () => {
 
             </section>
 
+            <Partition/>
             <section id="services" className={styles.first_section}>
-                <Partition/>
                 <h2>АН ООО “Лучший Дом” предлагает услуги: </h2>
                 {/*<div>Мы предоставляем следующие услуги, качество и выполнение которых гарантируем:</div>*/}
                 <ul>
@@ -80,7 +91,7 @@ const Index = () => {
             {/*</section>*/}
 
             <Partition/>
-            <section id="certificate" className={styles.section}>
+            <section id="certificate" className={styles.section_achievements}>
                 <div className={styles.achievements}>
                     <div className={styles.achievements__sellers}>
                         <h1>Свыше 100</h1>
@@ -109,6 +120,7 @@ const Index = () => {
             </section>
 
             <Partition/>
+
             <section className={styles.section}>
                 <div className={styles.section_map}>
                     <h3>Мы на карте</h3>

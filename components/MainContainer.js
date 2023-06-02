@@ -10,7 +10,7 @@ const MainContainer = ({children, keywords, title}) => {
         window.addEventListener('scroll', handleScroll);
     });
 
-    function handleScroll(){
+    function handleScroll() {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
@@ -27,7 +27,7 @@ const MainContainer = ({children, keywords, title}) => {
             <header className={styles.navbar}>
                 <nav className={styles.link_block}>
                     <Link className={styles.link} href="/">
-                        <Image src="/img.png" alt="logo" width={74} height={61}/>
+                        <Image src="/img.png" alt="logo" width={74} height={61} priority={true}/>
                     </Link>
                     <Link className={styles.link} href="/">Главная</Link>
                     <Link className={styles.link} href="#about">О нас</Link>
@@ -59,16 +59,37 @@ const MainContainer = ({children, keywords, title}) => {
             </main>
             <footer className={styles.footer}>
                 <div className={styles.footer_desc}>
-                    short description
+                    <Image src="/img.png" alt="logo" width={74} height={61}/>
+                    <p>short description</p>
                 </div>
                 <div className={styles.footer_services}>
-                    our services
+                    <h2>Наши услуги</h2>
+                    <div>our services</div>
                 </div>
                 <div className={styles.footer_form}>
-                    form
+                    <form>
+                        <h2>Получить консультацию</h2>
+                        <input type="text" placeholder="Имя"/>
+                        <input type="email" placeholder="Email"/>
+                        <input type="text" placeholder="Телефон"/>
+                        <button>Отправить</button>
+                    </form>
                 </div>
                 <div className={styles.footer_contact}>
-                    contacts
+                    <h2>Контактная информация</h2>
+                    <div>
+                        г. Самара, ул. Губанова, 3
+                    </div>
+                    <div>
+                        ПН-ПТ 10:00-18:00 (СБ,ВС-выходные)
+                    </div>
+                    <div className={styles.phones}>
+                        <div>8 960 819 -97-55</div>
+                        <div> 8 (846) 205-50-35</div>
+                    </div>
+                    <div>
+                        2055035@mail.ru
+                    </div>
                 </div>
             </footer>
         </>
