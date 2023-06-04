@@ -15,23 +15,22 @@
     padding-bottom: 20px;
     height: 640px;
     .image {
-      //position: relative;
-      //width: 100%;
-
+      position: relative;
+      width: 100%;
 
       .img {
-        position: relative;
         object-fit: cover;
         opacity: 0.88;
         height: 640px;
+        width: auto;
       }
 
-      div {
+      &_text {
         padding: 0 5px;
         position: absolute;
         top: 250px;
         text-align: center;
-        //width: 100%;
+        width: 100%;
 
         h1 {
           color: #000000;
@@ -109,6 +108,9 @@
       }
 
       &:active {
+        color: #FFAF50;
+      }
+      &_active{
         color: #FFAF50;
       }
     }

@@ -1,10 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "../styles/index.module.scss";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 
 const MainContainer = ({children, keywords, title}) => {
+
+    const [active, setActive] = useState(false);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -15,6 +17,7 @@ const MainContainer = ({children, keywords, title}) => {
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         document.getElementById("myBar").style.width = scrolled + "%";
+        setActive()
     }
 
     return (
@@ -29,7 +32,7 @@ const MainContainer = ({children, keywords, title}) => {
                     <Link className={styles.link} href="/">
                         <Image src="/img.png" alt="logo" width={74} height={61} priority={true}/>
                     </Link>
-                    <Link className={styles.link} href="/">Главная</Link>
+                    <Link className={`${styles.link} ${active ? styles.link_active: ""}`} href="/">Главная</Link>
                     <Link className={styles.link} href="#about">О нас</Link>
                     <Link className={styles.link} href="#services">Наши услуги</Link>
                     <Link className={styles.link} href="#certificate">Достижения</Link>

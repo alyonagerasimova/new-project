@@ -5,10 +5,10 @@ import Image from "next/image";
 import Partition from "../components/Partition";
 import Contact from "../components/Contact";
 import TeamSection from "../components/TeamSection";
-import { LoadingOutlined } from '@ant-design/icons';
-import { Spin } from 'antd';
+import {LoadingOutlined} from '@ant-design/icons';
+import {Spin} from 'antd';
 
-const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+const antIcon = <LoadingOutlined style={{fontSize: 24}} spin/>;
 
 const Index = () => {
     return (
@@ -20,12 +20,16 @@ const Index = () => {
                     <Image className={styles.img}
                            src="/high-view-toy-model-house-keys.jpg"
                            alt="img"
-                           fill={true}
+                            // fill={true}
+                           width="0"
+                           height="0"
+                           sizes="100vw"
                            placeholder={"blur"}
                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcwvC/HgAFVwI0U4SedgAAAABJRU5ErkJggg=="
-                           onLoad={(e) => <Spin indicator={antIcon} />}
+                           onLoad={(e) => <Spin indicator={antIcon}/>}
                     />
-                    <div>
+
+                    <div className={styles.image_text}>
                         <Image src="/img.png" alt="logo" width={74} height={61}/>
                         <h1>АН ООО “Лучший Дом” </h1>
                         <h2>все операции с недвижимостью</h2>
