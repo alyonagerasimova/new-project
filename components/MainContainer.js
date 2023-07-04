@@ -9,7 +9,7 @@ const MainContainer = ({children, keywords, title}) => {
     const [active, setActive] = useState(false);
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, handleNavigation);
     });
 
     function handleScroll() {
@@ -17,7 +17,36 @@ const MainContainer = ({children, keywords, title}) => {
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         document.getElementById("myBar").style.width = scrolled + "%";
-        setActive()
+    }
+
+    function handleNavigation() {
+        let sections = document.getElementsByTagName('section'),
+            nav = document.getElementsByClassName('link_block'),
+            nav_height = nav.outerHeight();
+        window.addEventListener('scroll', function () {
+            document.getElementsByClassName('link').removeClass('active');
+            // setActive(false);
+            let cur_pos = document.documentElement.scrollTop;
+            sections.each(function () {
+                let top = document.documentElement.offset().top - nav_height - 180,
+                    bottom = top + document.documentElement.outerHeight();
+                if (cur_pos >= top && cur_pos <= bottom) {
+                    nav.find('Link').removeClass('active');
+                    sections.removeClass('active');
+                    document.documentElement.addClass('active');
+                    setActive(true);
+                    nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+                }
+            });
+        });
+        // nav.find('a').on('click', function () {
+        //     let $el = $(this),
+        //         id = $el.attr('href');
+        //     $('html, body').animate({
+        //         scrollTop: $(id).offset().top - nav_height
+        //     }, 600);
+        //     return false;
+        // });
     }
 
     return (
@@ -32,11 +61,31 @@ const MainContainer = ({children, keywords, title}) => {
                     <Link className={styles.link} href="/">
                         <Image src="/img.png" alt="logo" width={74} height={61} priority={true}/>
                     </Link>
-                    <Link className={`${styles.link} ${active ? styles.link_active: ""}`} href="/">Главная</Link>
-                    <Link className={styles.link} href="#about">О нас</Link>
-                    <Link className={styles.link} href="#services">Наши услуги</Link>
-                    <Link className={styles.link} href="#certificate">Достижения</Link>
-                    <Link className={styles.link} href="#contacts">Контакты</Link>
+                    <Link
+                        className={`${styles.link} ${active ? styles.link_active : ""}`}
+                        href="/">
+                        Главная
+                    </Link>
+                    <Link
+                        className={`${styles.link} ${active ? styles.link_active : ""}`}
+                        href="#about">
+                        О нас
+                    </Link>
+                    <Link
+                        className={`${styles.link} ${active ? styles.link_active : ""}`}
+                        href="#services">
+                        Наши услуги
+                    </Link>
+                    <Link
+                        className={`${styles.link} ${active ? styles.link_active : ""}`}
+                        href="#certificate">
+                        Достижения
+                    </Link>
+                    <Link
+                        className={`${styles.link} ${active ? styles.link_active : ""}`}
+                        href="#contacts">
+                        Контакты
+                    </Link>
 
                     <div className={styles.info_block}>
                         <div className={styles.phones}>

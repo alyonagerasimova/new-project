@@ -20,7 +20,7 @@ const Index = () => {
                     <Image className={styles.img}
                            src="/high-view-toy-model-house-keys.jpg"
                            alt="img"
-                            // fill={true}
+                        // fill={true}
                            width="0"
                            height="0"
                            sizes="100vw"
@@ -119,6 +119,17 @@ const Index = () => {
             </section>
 
             <Partition/>
+            <section>
+                <h2>Прайс-лист</h2>
+                <button>Скачать</button>
+            </section>
+
+            <Partition/>
+            <section>
+                <h2>Наши партнеры (банки, с которыми сотрудничаем)</h2>
+            </section>
+
+            <Partition/>
             <section id="contacts" className={styles.section}>
                 <Contact/>
             </section>
@@ -152,5 +163,3 @@ const Index = () => {
 };
 
 export default Index;
-
-Index.getLayout
